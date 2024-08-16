@@ -1,49 +1,49 @@
-{{! 
-  Це леяут по замовчюванню, котрий вже містить базову структуру HTML документа
-  І котрий обгортає код container файлів для будь-яких ендпоїнтів
+{{!
+Це леяут по замовчюванню, котрий вже містить базову структуру HTML документа
+І котрий обгортає код container файлів для будь-яких ендпоїнтів
 }}
 
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<title>
-			{{title}}
-		</title>
-		<base href="../">
-		<meta charset='utf-8' />
+<head>
+	<title>
+		{{title}}
+	</title>
+	<base href="../">
+	<meta charset='utf-8' />
 
-		{{!-- Підключаємо файл, який нормалізує CSS --}}
-		<link href='css/normalize.css' rel='stylesheet' />
+	{{!-- Підключаємо файл, який нормалізує CSS --}}
+	<link href='css/normalize.css' rel='stylesheet' />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-		{{!-- Підключаємо файл стилів layout --}}
-		<link href='dist/css/layout/default/index.css' rel='stylesheet' />
-		{{!-- Підключаємо файл скриптів layout --}}
-		<script src="dist/js/layout/default/index.js"></script>
+	{{!-- Підключаємо файл стилів layout --}}
+	<link href='dist/css/layout/default/index.css' rel='stylesheet' />
+	{{!-- Підключаємо файл скриптів layout --}}
+	<script src="dist/js/layout/default/index.js"></script>
 
-		{{!-- Підключаємо файл стилів container --}}
-		<link href='dist/css/container/{{name}}/index.css' rel='stylesheet' />
-		{{!-- Підключаємо файл скриптів container --}}
-		<script src="dist/js/container/{{name}}/index.js"></script>
+	{{!-- Підключаємо файл стилів container --}}
+	<link href='dist/css/container/{{name}}/index.css' rel='stylesheet' />
 
-		{{#each component}}
-			{{!-- Підключаємо файл стилів component --}}
-			<link href='dist/css/component/{{this}}/index.css' rel='stylesheet' />
-			{{!-- Підключаємо файл скриптів component --}}
-			<script src="dist/js/component/{{this}}/index.js"></script>
-		{{/each}}
+	{{#each component}}
+	{{!-- Підключаємо файл стилів component --}}
+	<link href='dist/css/component/{{this}}/index.css' rel='stylesheet' />
+	{{!-- Підключаємо файл скриптів component --}}
+	<script src="dist/js/component/{{this}}/index.js"></script>
+	{{/each}}
 
-	</head>
+</head>
 
-	<body>
+<body>
 
-		{{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
-		{{{body}}}
+	{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу }}
+	{{{body}}}
 
-	</body>
+</body>
+{{!-- Підключаємо файл скриптів container --}}
+<script src="dist/js/container/{{name}}/index.js"></script>
 
 </html>

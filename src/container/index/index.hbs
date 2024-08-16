@@ -3,11 +3,30 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 }}
 
-<main>
-	{{>heading title="Index" info=data.test}}
-</main>
+<div class="page">
+    <h1 class="title">To-do list</h1>
+
+    <div class="form">
+        <input type="text" class="form__input" placeholder="Введіть задачу...">
+        <button class="form__button">Додати</button>
+    </div>
+    <main class="task__list">
+
+    </main>
+</div>
+
+<template id="task">
+    <div class="task">
+        <span class="task__number">1.</span>
+        <span class="task__text">Some placeholder content in a paragraph below the heading and date.</span>
+        <button class="task__button task__button--do"></button>
+        <button class="task__button task__button--cancel"></button>
+    </div>
+</template>
 
 {{!
-    Цей код містить лише те, що буде виводитись в <body>
+Цей код містить лише те, що буде виводитись в
+
+<body>
     Адже наш layout/default.hbs має вже структуру HTML
-}}
+    }}
